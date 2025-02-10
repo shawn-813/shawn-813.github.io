@@ -7,19 +7,38 @@
   <style>
     body {
       font-family: 'Georgia', serif;
-      background-color: #ffe6e6;
-      text-align: center;
       margin: 0;
       padding: 0;
       overflow: hidden;
+      position: relative;
+    }
+    .background-collage {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-auto-rows: minmax(150px, 1fr));
+      gap: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .background-collage img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7; /* Adjust opacity for better readability */
     }
     .container {
-      background-color: #ffcccc;
+      background-color: rgba(255, 204, 204, 0.9); /* Semi-transparent background */
       padding: 40px;
       border-radius: 15px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       margin: 20px auto;
       max-width: 600px;
+      position: relative;
+      z-index: 1;
     }
     h1 {
       color: #ff4d4d;
@@ -52,30 +71,17 @@
       display: none;
       margin-top: 20px;
       padding: 20px;
-      background-color: #ffcccc;
+      background-color: rgba(255, 204, 204, 0.9); /* Semi-transparent background */
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       text-align: left;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin: 20px auto;
-    }
-    .gallery img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     .heart {
       position: absolute;
       color: #ff4d4d;
       font-size: 20px;
       animation: float 5s infinite ease-in-out;
+      z-index: 2;
     }
     @keyframes float {
       0% { transform: translateY(0); opacity: 1; }
@@ -84,6 +90,17 @@
   </style>
 </head>
 <body>
+  <!-- Background Collage -->
+  <div class="background-collage">
+    <img src="missher.jpg" alt="Daily thoughts">
+    <img src="perfect.jpg" alt="The best partner i've ever had">
+    <img src="sackboy.jpg" alt="You didnt know how to keep your hands to yourself">
+    <img src="thebest.jpg" alt="My favorite teammate">
+    <img src="webfishing.jpg" alt="Long whale like my-">
+    <img src="Wewerehere.jpg" alt="Look at us, being brilliant">
+    <!-- Add more images here -->
+  </div>
+
   <!-- "Will You Be My Valentine?" Prompt -->
   <div class="container" id="prompt">
     <h1>Will You Be My Valentine? 💖</h1>
@@ -153,15 +170,6 @@
         <li>Empath</li>
         <li>Your biggest fan</li>
       </ul>
-    </div>
-
-    <!-- Photo Gallery -->
-    <h1>📸 Our Memories 📸</h1>
-    <div class="gallery">
-      <img src="photo1.jpg" alt="Memory 1">
-      <img src="photo2.jpg" alt="Memory 2">
-      <img src="photo3.jpg" alt="Memory 3">
-      <!-- Add more images here -->
     </div>
   </div>
 
